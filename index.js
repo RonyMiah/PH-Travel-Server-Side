@@ -132,13 +132,12 @@ async function run() {
       const result = await serviceCollection.insertOne(newService);
       console.log(newService)
       res.json(result);
-      // res.send(res.json(result))
     })
 
 
   } finally {
 
-    
+
     // Ensures that the client will close when you finish/error
     // await client.close();
   }
