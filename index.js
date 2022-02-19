@@ -25,25 +25,25 @@ async function run() {
   try {
     await client.connect();
 
-    // db and collection for services 
+    // Database collection for services 
 
     const serviceDatabase = client.db('services');
     const serviceCollection = serviceDatabase.collection('service');
 
 
 
-    //db and collection for cars
+    //Database collection for cars
 
     const carsDatabase = client.db('cars');
     const carsCollection = carsDatabase.collection('car')
 
 
-    //db and collection for placeorder 
+    //Database collection for placeorder 
 
     const placeOrderDatabase = client.db('placeOrder');
     const ordersCollection = placeOrderDatabase.collection('orders')
 
-    //get api
+    //Get api
 
     app.get('/services', async (req, res)=>{
       const collection = serviceCollection.find({});
@@ -134,9 +134,7 @@ async function run() {
       res.json(result);
     })
 
-
   } finally {
-
 
     // Ensures that the client will close when you finish/error
     // await client.close();
